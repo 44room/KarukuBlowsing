@@ -42,7 +42,8 @@ dotnet publish KaruBrowser -c Release -o publish-single `
 - アドレスバー(URL でなければ自動的に Google 検索)
 - 戻る / 進む / 再読み込み
 - `target="_blank"` のリンクや `window.open` を新しいタブで開く
-- 検索ボックス付きスタートページ(OS のダーク / ライト設定に追従)
+- チャコール×セージを基調としたダークテーマ UI(タイトルバー・タブ・ツールバー・スタートページまで統一)
+- 検索ボックス付きスタートページ
 - ダウンロード・印刷・ページ内検索(Ctrl+F)・ズーム(Ctrl+ホイール)は WebView2 標準機能で動作
 
 ## キーボードショートカット
@@ -63,7 +64,11 @@ dotnet publish KaruBrowser -c Release -o publish-single `
 KaruBrowser/
   KaruBrowser.csproj   … .NET 9 WinForms + Microsoft.Web.WebView2
   Program.cs           … エントリポイント(WebView2 ランタイム検出)
-  MainForm.cs          … メインウィンドウ(タブ・アドレスバー・スタートページ)
+  MainForm.cs          … メインウィンドウ(タブ管理・ツールバー・スタートページ)
+  Theme.cs             … カラーパレット(チャコール×セージ)・ダークタイトルバー
+  TabStrip.cs          … 自前描画のタブストリップ(✕・＋ ボタン付き)
+  IconButton.cs        … 円形ホバーのアイコンボタン(戻る / 進む / 再読み込み)
+  AddressBar.cs        … ピル型アドレスバー(フォーカスでセージのリング)
 publish/               … 配布用ビルド出力(Karu.exe)
 ```
 
